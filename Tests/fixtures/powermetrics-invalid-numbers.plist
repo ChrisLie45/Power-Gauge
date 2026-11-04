@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>processor</key>
+  <dict>
+    <key>freq_hz</key><real>nan</real>
+    <key>cpus</key>
+    <array>
+      <dict><key>cpu</key><integer>0</integer><key>freq_hz</key><real>inf</real></dict>
+      <dict><key>cpu</key><integer>1</integer><key>freq_hz</key><integer>3200000000</integer></dict>
+    </array>
+  </dict>
+  <key>smc</key>
+  <dict><key>num_prochots</key><real>1e30</real></dict>
+</dict>
+</plist>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>processor</key>
+  <dict><key>freq_hz</key><real>inf</real></dict>
+  <key>smc</key>
+  <dict><key>num_prochots</key><real>-1e30</real></dict>
+</dict>
+</plist>

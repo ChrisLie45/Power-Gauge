@@ -1,0 +1,15 @@
+documents: 2
+system MHz: 3200.0
+per-CPU MHz (1): [3200.0]
+watts package/cpu/gpu/dram: nil nil nil nil
+integrated GPU MHz: nil
+temp C / fan rpm / prochots: nil nil nil
+limits: no package record bits: none none
+read as: Limits unknown
+system MHz: not found
+per-CPU MHz (0): []
+watts package/cpu/gpu/dram: nil nil nil nil
+integrated GPU MHz: nil
+temp C / fan rpm / prochots: nil nil nil
+limits: no package record bits: none none
+read as: Limits unknown

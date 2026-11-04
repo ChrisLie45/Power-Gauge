@@ -1,0 +1,18 @@
+idle (29 samples): No throttling 28, Power limited 1
+    limits: ICCMAX/PL4/OTHER 1, integrated GPU ICCMAX/PL4/OTHER 1
+one CPU busy (30 samples): No throttling 30
+    limits: TURBO_ATTENUATION 15, TVB 15
+half the CPUs busy (30 samples): Power limited 30
+    limits: ICCMAX/PL4/OTHER 30, integrated GPU ICCMAX/PL4/OTHER 29
+every CPU busy (89 samples): Throttled by macOS 87, Power limited 2
+    limits: macOS speed limit 87, ICCMAX/PL4/OTHER 4, integrated GPU ICCMAX/PL4/OTHER 4
+rest (20 samples): No throttling 19, Throttled by macOS 1
+    limits: macOS speed limit 1
+integrated GPU busy (30 samples): No throttling 30
+    limits: integrated GPU SPARE_GT_13 29
+every CPU and integrated GPU (45 samples): Power limited 45
+    limits: ICCMAX/PL4/OTHER 45, integrated GPU ICCMAX/PL4/OTHER 45
+other GPU busy (29 samples): No throttling 29
+    limits: none
+cool down (29 samples): No throttling 29
+    limits: none

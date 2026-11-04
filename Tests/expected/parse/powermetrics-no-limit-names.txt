@@ -1,0 +1,8 @@
+documents: 1
+system MHz: 3577.47
+per-CPU MHz (16): [3554.79, 3636.28, 3563.27, 3636.84, 3560.87, 3634.39, 3497.74, 3632.63, 3501.0, 3636.65, 3572.23, 3633.35, 3603.05, 3639.33, 3592.96, 3640.02]
+watts package/cpu/gpu/dram: Optional(41.86) Optional(37.5126) Optional(0.466675) Optional(3.2436)
+integrated GPU MHz: Optional(373.795)
+temp C / fan rpm / prochots: Optional(83.72) Optional(5647.86) Optional(0)
+limits: none named bits: 0x01000000 0x01000000
+read as: No throttling

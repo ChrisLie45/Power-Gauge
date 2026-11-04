@@ -1,0 +1,8 @@
+documents: 1
+system MHz: 3952.42
+per-CPU MHz (16): [4152.64, 3854.05, 3903.99, 3867.83, 3897.37, 3860.02, 3914.34, 3899.2, 3939.98, 3893.62, 3900.17, 3948.87, 3951.29, 3885.62, 3896.7, 3871.85]
+watts package/cpu/gpu/dram: Optional(51.8696) Optional(50.0857) Optional(0.0) Optional(1.17761)
+integrated GPU MHz: nil
+temp C / fan rpm / prochots: Optional(88.45) Optional(1952.6) Optional(0)
+limits: ["CPU LIMIT ICCMAX/PL4/OTHER", "CPU LIMIT TURBO_ATTENUATION", "CPU LIMIT TVB", "GPU LIMIT ICCMAX/PL4/OTHER"] bits: 0x61000100 0x01000100
+read as: Power limited: ICCMAX/PL4/OTHER; integrated GPU: ICCMAX/PL4/OTHER

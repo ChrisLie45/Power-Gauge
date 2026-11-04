@@ -1,0 +1,24 @@
+normal: package 20.00 W, cores 15.00, GPU 1.00, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+a tenth of a second: package 20.00 W, cores 15.00, GPU 1.00, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+energy counters wrap: package 20.00 W, cores 15.00, GPU 1.00, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+no integrated GPU: package 20.00 W, cores 15.00, GPU none, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+no memory counter: package 20.00 W, cores 15.00, GPU 1.00, memory none; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+Xeon: package 20.00 W, cores 15.00, GPU 1.00, memory none; average 3600 MHz, CPUs 3600 3600 3600 3600; No throttling
+no limit registers: package 20.00 W, cores 15.00, GPU 1.00, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; Limits unknown
+power limited, with older limits logged: package 20.00 W, cores 15.00, GPU 1.00, memory 1.50; average 3600 MHz, CPUs 3600 3600 3600 3600; Power limited: ICCMAX/PL4/OTHER, PL1; integrated GPU: ICCMAX/PL4/OTHER
+counters reset by sleep: can't be trusted: the package drew 261944 W
+cores draw more than the package: can't be trusted: the cores drew 25.0 W of the package's 20.0 W
+MPERF faster than the base clock: can't be trusted: CPU 1's MPERF ran faster than the base clock
+impossible frequency: can't be trusted: CPU 2 ran at 13333 MHz
+a CPU offline: can't be trusted: CPU 3 stopped reporting, as it would if macOS had taken it offline
+CPU count changed: can't be trusted: the number of CPUs went from 4 to 3
+energy unit nonsense: can't be trusted: the energy unit read 0x0
+run and idle times short: can't be trusted: CPU 0's run and idle times cover 0.30 s of 1.00 s
+clock went backwards: can't be trusted: the clock went backwards
+an hour between readings: can't be trusted: 3600.00 s passed between readings
+burst, 10 ms: CPUs 3600 3600 3600 3600
+burst, a burst on CPU 0: CPUs 4800 3600 3600 3600
+burst, CPU 1 hardly ran: CPUs 3600 3600 3600
+burst, CPU 2 stored nothing new: CPUs 3600 3600 3600
+burst, counters reset by sleep: CPUs none
+burst, CPU count changed: CPUs none

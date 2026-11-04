@@ -1,0 +1,22 @@
+# Reason names, one per line, and the kind of limit each is taken for (LimitKind.of).
+# The names are Intel's limit reasons in the spellings they may come in; scripts/test.sh
+# checks that each is still read as the expected file says.
+THERMAL
+PROCHOT
+RATL
+VR_THERMALERT
+VR_THERM_ALERT
+PL1
+PL2
+ICCMAX/PL4/OTHER
+VR_TDC
+EDP_OTHER
+MAX_TURBO
+TURBO_ATTEN
+RSR
+OTHER
+SOMETHING_NEW
+MAX_TURBO_LIMIT
+TURBO_ATTENUATION
+TVB
+SPARE_GT_13

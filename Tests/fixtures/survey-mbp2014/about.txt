@@ -1,0 +1,5 @@
+Mac: MacBookPro11,3, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz, 8 CPUs
+macOS: 26.7.1 (25G241)
+Power: Now drawing from 'AC Power'
+Started: Mon 19 Oct 2026 23:34:06 AEDT
+CPU family: 280134364

@@ -1,0 +1,18 @@
+idle (30 samples): No throttling 30
+    limits: MAX_TURBO_LIMIT 16
+one CPU busy (30 samples): No throttling 30
+    limits: MAX_TURBO_LIMIT 29
+half the CPUs busy (31 samples): Thermal throttling 31
+    limits: THERMAL 31
+every CPU busy (90 samples): Throttled by macOS 74, Thermal throttling 16
+    limits: macOS speed limit 74, THERMAL 22
+rest (19 samples): No throttling 19
+    limits: MAX_TURBO_LIMIT 10
+integrated GPU busy (30 samples): Throttled by macOS 21, No throttling 9
+    limits: macOS speed limit 21, MAX_TURBO_LIMIT 6, VR_ICCMAX 1
+every CPU and integrated GPU (46 samples): Throttled by macOS 46
+    limits: macOS speed limit 46
+other GPU busy (30 samples): No throttling 26, Thermal throttling 2, Throttled by macOS 2
+    limits: MAX_TURBO_LIMIT 9, THERMAL 2, macOS speed limit 2
+cool down (30 samples): No throttling 30
+    limits: MAX_TURBO_LIMIT 15

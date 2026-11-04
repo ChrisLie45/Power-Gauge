@@ -1,0 +1,4 @@
+Time,Elapsed (s),Package (W),IA cores (W),GT (W),DRAM (W),Core max (GHz),Core avg (GHz),Core min (GHz),CPU die (C),Core temp max (C),Core temp avg (C),Core temp min (C),Fan (rpm),Prochots,Speed limit (%),Scheduler limit (%),CPUs available,Low Power Mode,Frequency ceiling (GHz),CPU utilization (%),Memory used (GB),Memory compressed (GB),Swap (GB),Throttling,Limits,Integrated GPU limits,CPU limit bits,GPU limit bits,CPU readings from
+41.86,37.51,0.47,3.24,3.640,3.577,3.498,83.7,0x01000000,0x01000000,powermetrics
+41.86,,,,3.640,3.577,3.498,83.7,0x01000000,0x01000000,powermetrics
+41.86,37.51,0.47,3.24,3.640,3.577,3.498,83.7,0x04030403,0x01000000,powermetrics

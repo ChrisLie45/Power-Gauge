@@ -1,0 +1,98 @@
+# Builds the app and runs the tests (scripts/test.sh): parsing, recording, the kernel's statistics
+# (made up, and this runner's own where its virtual machine passes them through), the root script
+# with a stand-in for powermetrics, and the whole app offscreen.
+# The app is built on macOS 26, whose SDK gives it that system's look, and is meant to run back
+# to macOS 11; the same build is then tested on macOS 15, the oldest system GitHub runs on Intel.
+# Both are Intel Macs, since the app is built for Intel only.
+# A push to main that passes both, with a version in Resources/Info.plist that has no release yet,
+# then releases that version, with the app zipped for download.
+name: Build
+on: [push, pull_request]
+
+# Only the release job needs to write to the repository.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26-intel
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+      # Google's Swift style as .swift-format sets it up.
+      - name: Check the style
+        run: swift format lint --strict --parallel --recursive Package.swift Sources Tests
+      - name: Build and test
+        run: scripts/test.sh
+      - name: Read the version
+        id: version
+        run: echo "version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Resources/Info.plist)" >> "$GITHUB_OUTPUT"
+      # In a tar file, since an artifact's own zip would lose the executable's permissions.
+      - name: Pack the app
+        run: tar -czf PowerGauge.tar.gz -C build "Power Gauge.app"
+      - uses: actions/upload-artifact@v7
+        with:
+          path: PowerGauge.tar.gz
+          archive: false
+      # The download for a release: a zip made by ditto, as the Finder makes them, which keeps
+      # the app's permissions and signature. It goes inside the artifact's own zip, so that it
+      # comes out of the artifact unopened.
+      - name: Zip the app for a release
+        run: ditto -c -k --keepParent "build/Power Gauge.app" "Power-Gauge-${{ steps.version.outputs.version }}.zip"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release
+          path: Power-Gauge-${{ steps.version.outputs.version }}.zip
+      - name: Keep the test output
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-output-macos-26
+          path: build/tests
+
+  older-macos:
+    needs: build
+    runs-on: macos-15-intel
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: PowerGauge.tar.gz
+          path: download
+      - name: Unpack the app
+        run: |
+          mkdir -p build
+          tar -xzf "$(find download -name PowerGauge.tar.gz -type f | head -1)" -C build
+      - name: Test the macOS 26 build
+        run: scripts/test.sh --no-build
+      - name: Keep the test output
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-output-macos-15
+          path: build/tests
+
+  release:
+    needs: [build, older-macos]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # to tag the commit and publish the release
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: release
+          path: release
+      - name: Release the version, if it is new
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          if gh release view "v$VERSION" > /dev/null 2>&1; then
+            echo "Version $VERSION has a release already; raise CFBundleShortVersionString in Resources/Info.plist for a new one."
+            exit 0
+          fi
+          gh release create "v$VERSION" "release/Power-Gauge-$VERSION.zip" --target "$GITHUB_SHA" \
+            --title "Power Gauge $VERSION" --notes-file .github/release-notes.md --generate-notes

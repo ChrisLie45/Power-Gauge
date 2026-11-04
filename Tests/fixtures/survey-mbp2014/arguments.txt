@@ -1,0 +1,1 @@
+--samplers cpu_power,gpu_power,smc --show-extra-power-info --hide-cpu-duty-cycle -f plist -i 1000 --show-plimits

@@ -1,0 +1,8 @@
+documents: 1
+system MHz: 3432.91
+per-CPU MHz (8): [3438.05, 3441.1, 3425.02, 3446.33, 3427.66, 3398.88, 3439.83, 3447.63]
+watts package/cpu/gpu/dram: Optional(47.7821) Optional(35.7728) Optional(0.0) Optional(1.43866)
+integrated GPU MHz: nil
+temp C / fan rpm / prochots: Optional(96.45) Optional(3492.0) nil
+limits: none named bits: 0x35020002 0x04010000
+read as: Thermal throttling: THERMAL
